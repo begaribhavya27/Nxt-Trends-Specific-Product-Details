@@ -1,0 +1,233 @@
+/* Write your CSS here */
+.product-details-container {
+  width: 100%;
+  padding: 50px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.failure-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+.failure-head {
+  font-family: 'Roboto';
+  color: #12022f;
+}
+.btn {
+  background-color: #3b82f6;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+}
+.success-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.img {
+  border-radius: 10px;
+}
+
+.description-container {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.title-1 {
+  color: #616e7c;
+  font-family: 'Roboto';
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.price {
+  color: #171f46;
+  font-family: 'Roboto';
+  margin-bottom: 15px;
+}
+.rating-container {
+  display: flex;
+  align-items: center;
+  background-color: #3b82f6;
+  border-radius: 6px;
+  padding: 6px 16px;
+  margin-right: 10px;
+}
+
+.rating {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 4px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.star {
+  height: 20px;
+  width: 20px;
+  margin-bottom: 3px;
+}
+.ratings-container {
+  display: flex;
+  flex-direction: row;
+}
+.total-reviews {
+  font-family: 'Roboto';
+  color: #1e293b;
+  font-size: 16px;
+  font-weight: 500;
+}
+.description {
+  font-family: 'Roboto';
+  color: #616e7c;
+}
+.para {
+  font-family: 'Roboto';
+  color: #1e293b;
+  font-weight: bold;
+}
+.span {
+  color: #475569;
+  font-weight: 400;
+}
+.line {
+  width: 100%;
+  border-width: 1px;
+  border-color: #cbced2;
+}
+.quantity-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.quantity-button {
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  margin: 10px;
+}
+.icon {
+  margin: 10px;
+  font-size: 20px;
+  color: #616e7c;
+}
+.quantity {
+  font-family: 'Roboto';
+  color: #475569;
+  font-size: 35px;
+  margin: 10px;
+}
+.cart-btn {
+  padding: 10px;
+  background-color: #3b82f6;
+  border: none;
+  color: white;
+  font-family: 'Roboto';
+  border-radius: 6px;
+  font-size: 15px;
+  width: 180px;
+  font-weight: bold;
+}
+.head {
+  font-family: 'Roboto';
+  font-weight: bold;
+  color: #475569;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+.similar-products {
+  display: flex;
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+@media screen and (max-width: 767px) {
+  .description-container {
+    width: 90%;
+  }
+  .head {
+    font-size: 26px;
+  }
+  .error-view-img {
+    width: 50%;
+  }
+  .failure-head {
+    font-size: 17px;
+  }
+  .top-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .img {
+    width: 120%;
+  }
+  .title-1 {
+    font-size: 20px;
+  }
+  .price {
+    font-size: 16px;
+  }
+  .description {
+    font-size: 16px;
+  }
+  .para {
+    font-size: 15px;
+  }
+  .similar-products {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .error-view-img {
+    width: 80%;
+  }
+  .head {
+    font-size: 35px;
+  }
+  .failure-head {
+    font-size: 22px;
+  }
+  .top-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .img {
+    width: 45%;
+    margin-right: 20px;
+  }
+  .title-1 {
+    font-size: 55px;
+  }
+  .price {
+    font-size: 20px;
+  }
+  .description {
+    font-size: 18px;
+  }
+  .para {
+    font-size: 20px;
+  }
+  .similar-products {
+    flex-direction: row;
+  }
+}
+.nav-link {
+  text-decoration: none;
+}
