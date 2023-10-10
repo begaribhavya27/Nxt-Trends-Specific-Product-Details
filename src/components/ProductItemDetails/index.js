@@ -1,7 +1,7 @@
 // Write your code here
 import {Component} from 'react'
 import {Link} from 'react-router-dom'
-import {Loader} from 'react-loader-spinner'
+import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
 import {BsPlusSquare, BsDashSquare} from 'react-icons/bs'
 import Header from '../Header'
@@ -27,27 +27,16 @@ class ProductItemDetails extends Component {
     this.getDetails()
   }
 
-  onDecrement = () => {
-    const {quantity} = this.state
-    if (quantity > 1) {
-      this.setState(prevState => ({quantity: prevState.quantity - 1}))
-    }
-  }
-
-  onIncrement = () => {
-    this.setState(prevState => ({quantity: prevState.quantity + 1}))
-  }
-
   getFormattedData = data => ({
+    availability: data.availability,
+    brand: data.brand,
+    description: data.description,
     id: data.id,
     imageUrl: data.image_url,
-    title: data.title,
-    brand: data.brand,
-    totalReviews: data.total_reviews,
-    rating: data.rating,
-    availability: data.availability,
     price: data.price,
-    description: data.description,
+    rating: data.rating,
+    title: data.title,
+    totalReviews: data.total_reviews,
   })
 
   getDetails = async () => {
@@ -77,14 +66,26 @@ class ProductItemDetails extends Component {
         similarProducts: updatedSimilarProductsData,
         apiStatus: apiStatusConstants.success,
       })
-    } else {
+    }
+    if (response.status === 404) {
       this.setState({apiStatus: apiStatusConstants.failure})
     }
   }
 
+  onDecrement = () => {
+    const {quantity} = this.state
+    if (quantity > 1) {
+      this.setState(prevState => ({quantity: prevState.quantity - 1}))
+    }
+  }
+
+  onIncrement = () => {
+    this.setState(prevState => ({quantity: prevState.quantity + 1}))
+  }
+
   renderLoadingView = () => (
-    <div data-testid="loader">
-      <Loader type="ThreeDots" color="#0b69ff" height={80} width={80} />
+    <div className="products-details-loader-container" data-testid="loader">
+      <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
     </div>
   )
 
@@ -167,7 +168,6 @@ class ProductItemDetails extends Component {
           </div>
         </div>
         <h1 className="head">Similar Products</h1>
-
         <ul className="similar-products">
           {similarProducts.map(eachProduct => (
             <SimilarProductItem
@@ -182,6 +182,7 @@ class ProductItemDetails extends Component {
 
   renderView = () => {
     const {apiStatus} = this.state
+
     switch (apiStatus) {
       case apiStatusConstants.success:
         return this.renderProductDetailsView()
@@ -198,9 +199,7 @@ class ProductItemDetails extends Component {
     return (
       <>
         <Header />
-        <div className="product-details-container">
-          {this.renderProductDetailsView()}
-        </div>
+        <div className="product-details-container">{this.renderView()}</div>
       </>
     )
   }

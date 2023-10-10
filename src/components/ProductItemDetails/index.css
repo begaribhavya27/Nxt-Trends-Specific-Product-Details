@@ -154,7 +154,13 @@
   padding-left: 0px;
   list-style-type: none;
 }
-
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 @media screen and (max-width: 767px) {
   .description-container {
     width: 90%;
